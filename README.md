@@ -11,9 +11,11 @@ You should now see a lot of information, we are particularly are looking for the
 
     inet 111.111.11.56  netmask 255.255.255.0  broadcast 111.111.11.255
 
-Now to determine the range to scan we need to know a little about CIDIR notation, essentially since are mask is 255.255.255.0 the range we are looking inspecting is 111.111.11.0 - 111.111.11.255 in total 256 IP addresses which is dontated as 111.111.11.0/24 in CIDIR notation.
+Now to determine the range to scan we need to know a little about CIDIR notation, essentially since are mask is 255.255.255.0 the range we are looking inspecting is 111.111.11.0 - 111.111.11.255 in total 256 IP addresses which is dontated as 111.111.11.0/24 in CIDIR notation. Now that we have our range lets start scanning.
 
+    $ namp -sn 111.111.111.0/24
 
+Here we can see a list of devices on the network from nmaps output
 
 
 
