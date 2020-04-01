@@ -15,7 +15,18 @@ Now to determine the range to scan we need to know a little about CIDIR notation
 
     $ namp -sn 111.111.111.0/24
 
-Here we can see a list of devices on the network from nmaps output
+Here we can see a list of devices on the network from nmaps output.
+
+## WireShark
+
+Now in order to run WireShark from the terminal we can execute the following command;
+
+    $ tshark -i wlan0 -c 1 -x -V
+    
+This will run WireShark in promiscuous mode, to run WireShark in monitor mode which is designed for sniffing packets on wireless networks we can run it in monitor mode by adding -I to the above command as shown.
+
+
+    $ tshark -i wlan0 -c 1 -x -V -I
 
 
 
