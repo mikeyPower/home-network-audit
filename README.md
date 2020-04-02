@@ -28,7 +28,9 @@ This will run WireShark in promiscuous mode, to run WireShark in monitor mode wh
 
     $ tshark -i wlan0 -c 1 -x -V -I
 
+In order to read an output file from wireshark which are in pcap file format we simply enter.
 
+    $ tshark -r <file>
 
 Installing NMAP
 
