@@ -2,12 +2,13 @@
 
 As my machine is debian based I'm going to use that as my basis for the information to follow
 
+## Nmap
 
 Now in order to figure out what our current network IP address is and range we should perform our scans lets execute the following command to find this out.
 
     $ ifconfig
 
-You should now see a lot of information, we are particularly are looking for the network information regarding WiFi this is at the bottom of my screen symbolised by wlan0. Here we will be able to determine the IP address of the device we are currently using as well as the range of IP addresses to scan. See below for example output of what were after.
+You should now see a lot of information, we are particularly looking for the network information regarding WiFi. This is at the bottom of my screen symbolised by wlan0. Here we will be able to determine the IP address of the device we are currently using as well as the range of IP addresses to scan. See below for example output of what were after.
 
     inet 111.111.11.56  netmask 255.255.255.0  broadcast 111.111.11.255
 
@@ -32,6 +33,8 @@ In order to read an output file from wireshark which are in pcap file format we 
 
     $ tshark -r <file>
 
+## Prerequisite
+
 Installing NMAP
 
     $ sudo apt-get install nmap
@@ -40,3 +43,20 @@ Installing NMAP
 Installing WireShark
 
     $ sudo apt-get install wireshark
+
+Or we can simply use the following bash script:
+
+    $ ./install.sh
+
+## Run
+
+Now in order to we execute both script in sequence we can execute the following Makefile command:
+
+    $ make run
+
+## Output 
+
+tshark will continue to run until it is cancelled which can be achieved by performing Ctrl + c. We could also set a limit as to the number of packets we want to achieve by editing the wireshar.sh script and adding either -c for packet count or -n for various options in time.
+
+The output files will be created in two seperate folders one for Nmap (see nmap_data/ folder)  and the other for tshark (see wireshark_data/ folder).
+
