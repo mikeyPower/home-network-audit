@@ -1,6 +1,8 @@
 # home-wifi-audit
 
-As my machine is debian based I'm going to use that as my basis for the information to follow
+What's really going on in your home network?
+
+If your curious here is a tutorial on how to use Nmap and Wireshark (command line tshark) to find out just that, along with a few scripts to analyse the information while making the process of running these tools a bit easier.
 
 ## Nmap
 
@@ -18,18 +20,18 @@ Now to determine the range to scan we need to know a little about CIDIR notation
 
 Here we can see a list of devices on the network from nmaps output.
 
-## WireShark
+## Wireshark
 
-Now in order to run WireShark from the terminal we can execute the following command;
+Now in order to run Wireshark from the terminal we can execute the following command;
 
     $ tshark -i wlan0 -c 1 -x -V
     
-This will run WireShark in promiscuous mode, to run WireShark in monitor mode which is designed for sniffing packets on wireless networks we can run it in monitor mode by adding -I to the above command as shown.
+This will run WireShark in promiscuous mode, to run Wireshark in monitor mode which is designed for sniffing packets on wireless networks we can run it in monitor mode by adding -I to the above command as shown.
 
 
     $ tshark -i wlan0 -c 1 -x -V -I
 
-In order to read an output file from wireshark which are in pcap file format we simply enter.
+In order to read an output file from Wireshark which are in pcap file format we simply enter.
 
     $ tshark -r <file>
 
@@ -40,7 +42,7 @@ Installing NMAP
     $ sudo apt-get install nmap
     
     
-Installing WireShark
+Installing Wireshark
 
     $ sudo apt-get install wireshark
 
